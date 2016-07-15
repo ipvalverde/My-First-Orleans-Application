@@ -10,9 +10,13 @@ namespace MyGrains
     /// </summary>
     public class Grain1 : Grain, IGrain1
     {
-        public Task<string> SayHello()
+        private string text = "Hello World!";
+
+        public Task<string> SayHello(string greeting)
         {
-            return Task.FromResult("Hello World!");
+            var oldText = text;
+            text = greeting;
+            return Task.FromResult(oldText);
         }
     }
 }

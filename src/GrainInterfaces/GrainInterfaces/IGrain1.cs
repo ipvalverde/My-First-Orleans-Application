@@ -8,6 +8,6 @@ namespace MyGrainInterfaces
     /// </summary>
 	public interface IGrain1 : IGrainWithIntegerKey
     {
-        Task<string> SayHello();
+        Task<string> SayHello(string greeting);
     }
 }
